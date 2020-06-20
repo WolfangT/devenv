@@ -3,7 +3,6 @@
 
 NANO=nano-4.9.3
 
-
 _install_devenv() {
     # Get the code and install
     cd
@@ -18,11 +17,23 @@ _install_devenv() {
     rm -rf devenv-master
 }
 
+_install_nano() {
+    # install latest nano
+    curl "https://www.nano-editor.org/dist/v4/$NANO.tar.gz" | sudo tar -zxC "/opt"
+    cd "/opt/$NANO" && \
+        sudo ./configure --enable-all --enable-utf8 && \
+        sudo make && sudo make install
+    cd ~
+}
+
 _update_system_debian() {
     # general update
-    sudo apt-get update
-    sudo apt-get upgrade -y
-    sudo apt-get install -y curl gcc git mc unzip python3 python3-dev python3-pip python3-venv python3-wheel nano/sid
+    sudo apt-get update && \
+    sudo apt-get upgrade -y && \
+    sudo apt-get install -y \
+        curl gcc git mc unzip \
+        python3 python3-dev python3-pip python3-venv python3-wheel \
+        nano
 }
 
 if apt-get -v &> /dev/null ; then
@@ -32,8 +43,4 @@ else
 fi
 python3 -m pip install --upgrade flake8 black isort
 _install_devenv
-
-# install latest nano
-#curl "https://www.nano-editor.org/dist/v4/$NANO.tar.gz" | sudo tar -zxC "/opt"
-#cd "/opt/$NANO" && sudo ./configure --enable-all --enable-utf8 && sudo make && sudo make install
-#cd ~
+mc
