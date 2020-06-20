@@ -12,5 +12,5 @@ and installs python3 along flake8, black and isort for code linting and formatin
 Install
 -------
 
-1- make sure you have curl installed
-2- run `curl https://raw.githubusercontent.com/WolfangT/devenv/master/install.sh | sh -s`
+ - make sure you have curl installed
+ - run `curl https://raw.githubusercontent.com/WolfangT/devenv/master/install.sh | sh -s`
