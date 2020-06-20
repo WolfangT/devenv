@@ -33,6 +33,7 @@ _update_system_debian() {
     sudo apt-get install -y \
         curl gcc git mc unzip \
         python3 python3-dev python3-pip python3-venv python3-wheel \
+        black isort flake8
         nano
 }
 
@@ -41,6 +42,5 @@ if apt-get -v &> /dev/null ; then
 else
     echo "For the moment the install script is only for apt systems"
 fi
-python3 -m pip install --upgrade flake8 black isort
 _install_devenv
 mc
