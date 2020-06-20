@@ -13,7 +13,7 @@ set multibuffer
 unset noconvert
 unset nohelp
 unset nonewlines
-unset nowrap
+unset breaklonglines
 set regexp
 set smarthome
 set smooth
