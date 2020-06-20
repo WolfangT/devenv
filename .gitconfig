@@ -1,0 +1,15 @@
+[user]
+    email = wolfang.torres@gmail.com
+    name = Wolfang Torres
+[push]
+    default = simple
+[core]
+    autocrlf = input
+[diff]
+    tool = mcdiff
+[merge]
+    tool = mcdiff
+[mergetool "mcdiff"]
+    cmd = mcdiff "$MERGED" "$REMOTE"
+[difftool "mcdiff"]
+    cmd = mcdiff "$MERGED" "$REMOTE"

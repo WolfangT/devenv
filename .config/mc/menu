@@ -1,0 +1,44 @@
+# Custom Mc comands for git
+
+= ! t t
+v   View git diff for the current file
+    tmp=$(mktemp)
+    git show HEAD:%f > $tmp
+    mcdiff %f $tmp
+
+c   Commit everything
+    message=%{Commit Message}
+    git commit -a -m "$message"
+
+s   stage everything
+    git add --all    
+
+i   Use isort in the folder
+    isort -rc .
+
+f   Find and replace interactively on the project
+    f=%{Files pattern to to work on}
+    s=%{Find Pattern}
+    r=%{Replace Pattern}
+    find . -path '*/__pycache__/*' -prune -o -path '*/.*' -prune -o -path '*/*env/*' -o -name "$f" -print | \
+    while IFS= read file; do 
+        if grep -El "$s" "$file" ; then
+            sed -i.bak -re "s/$s/$r/g" "$file"
+            mcdiff "$file" "$file.bak"
+            rm "$file.bak"
+        fi
+    done
+
+# Defaults
+
++ ! t t
+@       Do something on the current file
+        CMD=%{Enter command}
+        $CMD %f
+
++ t t
+@       Do something on the tagged files
+        CMD=%{Enter command}
+        for i in %t ; do
+            $CMD "$i"
+        done

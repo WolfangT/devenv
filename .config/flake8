@@ -1,0 +1,13 @@
+[flake8]
+max-line-length=80
+ignore=E203,E501,W503 
+select=C,E,F,W,B,B950
+exclude =
+    .git,
+    __pycache__,
+    .vscode,
+    *venv,
+    build,
+    dist,
+    old,
+    *.egg-info

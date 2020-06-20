@@ -1,0 +1,22 @@
+# Custom Nano Confs
+#include "/usr/local/share/nano/*.nanorc"
+extendsyntax python linter flake8
+extendsyntax python formatter black
+set autoindent
+unset backup
+set casesensitive
+set historylog
+set constantshow
+unset morespace
+set mouse
+set multibuffer
+unset noconvert
+unset nohelp
+unset nonewlines
+unset nowrap
+set regexp
+set smarthome
+set smooth
+set tabsize 4
+set tabstospaces
+set linenumbers

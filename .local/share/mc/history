@@ -1,0 +1,18 @@
+[mc.esc.timeout]
+0=1000000
+
+[mini_input]
+0=half type name | size | perm
+
+[panel-brief-cols-input]
+0=2
+
+[user-fmt-input]
+0=half type name | size | perm
+1=half type name
+
+[input-def]
+0=*
+
+[inpmc.fm.panelize.add]
+0=git
