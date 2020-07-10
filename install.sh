@@ -49,9 +49,11 @@ while [ ! -z "$1" ]; do
     case $1 in
     "-h" | "--help" ) echo "$help" ; exit 0 ;;
     "-f" | "--full" ) full=true ;;
+    esac
+    shift
 done
 
-if [ full -eq true ] ; then
+if $full ; then
     if apt-get -v &> /dev/null ; then
         _update_system_debian
     else
