@@ -3,6 +3,13 @@
 
 NANO=nano-4.9.3
 
+help="Install Wolfang's development enviroment
+
+  OPTIONS
+    -h | --help --> prints this messages and exits
+    -f | --full --> performs a full system upgrade  
+"
+
 _install_devenv() {
     # Get the code and install
     cd
@@ -37,10 +44,18 @@ _update_system_debian() {
         nano
 }
 
-if apt-get -v &> /dev/null ; then
-    _update_system_debian
-else
-    echo "For the moment the install script is only for apt systems"
+full=false
+while [ ! -z "$1" ]; do
+    case $1 in
+    "-h" | "--help" ) echo "$help" ; exit 0 ;;
+    "-f" | "--full" ) full=true ;;
+done
+
+if [ full -eq true ] ; then
+    if apt-get -v &> /dev/null ; then
+        _update_system_debian
+    else
+        echo "For the moment the install script is only for apt systems"
+    fi
 fi
 _install_devenv
-mc

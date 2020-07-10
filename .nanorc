@@ -20,3 +20,4 @@ set smooth
 set tabsize 4
 set tabstospaces
 set linenumbers
+unset suspend
