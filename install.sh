@@ -1,4 +1,4 @@
-#!/bin/ah
+#!/bin/sh
 # Custom bash script for setting up Wolfang's Debian developer eviroment
 
 NANO=nano-4.9.3
@@ -7,7 +7,7 @@ help="Install Wolfang's development enviroment
 
   OPTIONS
     -h | --help --> prints this messages and exits
-    -f | --full --> performs a full system upgrade  
+    -f | --full --> performs a full system upgrade
 "
 
 _install_devenv() {
