@@ -13,8 +13,13 @@ c   Commit everything
 s   stage everything
     git add --all    
 
-i   Use isort in the folder
+i   Do maintenance in the folder
     isort -rc .
+    black .
+    flake8 .
+
+d   Delete bakup files
+    rm *~
 
 f   Find and replace interactively on the project
     f=%{Files pattern to to work on}
@@ -23,9 +28,9 @@ f   Find and replace interactively on the project
     find . -path '*/__pycache__/*' -prune -o -path '*/.*' -prune -o -path '*/*env/*' -o -name "$f" -print | \
     while IFS= read file; do 
         if grep -El "$s" "$file" ; then
-            sed -i.bak -re "s/$s/$r/g" "$file"
-            mcdiff "$file" "$file.bak"
-            rm "$file.bak"
+            sed -i~ -re "s/$s/$r/g" "$file"
+            mcdiff "$file" "${file}~"
+            rm "${file}~"
         fi
     done
 
