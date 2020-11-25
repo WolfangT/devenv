@@ -2,11 +2,11 @@
 #include "/usr/local/share/nano/*.nanorc"
 extendsyntax python linter flakehell lint
 extendsyntax python formatter black
-extendsyntax JavaScript formatter npx prettier --write
-extendsyntax HTML formatter npx prettier --write
-extendsyntax CSS formatter npx prettier --write
-extendsyntax yaml formatter npx prettier --write
-extendsyntax Markdown formatter npx prettier --write
+extendsyntax JavaScript formatter prettier --write
+extendsyntax HTML formatter prettier --write
+extendsyntax CSS formatter prettier --write
+extendsyntax yaml formatter prettier --write
+extendsyntax Markdown formatter prettier --write
 
 set autoindent
 unset backup

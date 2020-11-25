@@ -40,8 +40,8 @@ _update_system_debian() {
     sudo apt-get install -y \
         curl gcc git mc unzip \
         python3 python3-dev python3-pip python3-venv python3-wheel \
-        black isort flake8 nano npm
-    npm install --global prettier
+        black isort flake8 npm nano=5.3
+    sudo npm install --global prettier
 }
 
 full=false
