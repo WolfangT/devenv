@@ -1,12 +1,12 @@
+
 # Custom Nano Confs
-#include "/usr/local/share/nano/*.nanorc"
 extendsyntax python linter flakehell lint
 extendsyntax python formatter black
-extendsyntax JavaScript formatter prettier --write
-extendsyntax HTML formatter prettier --write
-extendsyntax CSS formatter prettier --write
-extendsyntax yaml formatter prettier --write
-extendsyntax Markdown formatter prettier --write
+extendsyntax JavaScript formatter prettier
+extendsyntax HTML formatter prettier
+extendsyntax CSS formatter prettier
+extendsyntax yaml formatter prettier
+extendsyntax Markdown formatter prettier
 
 set autoindent
 unset backup
