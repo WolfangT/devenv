@@ -1,7 +1,13 @@
 # Custom Nano Confs
 #include "/usr/local/share/nano/*.nanorc"
-extendsyntax python linter flake8
+extendsyntax python linter flakehell lint
 extendsyntax python formatter black
+extendsyntax JavaScript formatter npx prettier --write
+extendsyntax HTML formatter npx prettier --write
+extendsyntax CSS formatter npx prettier --write
+extendsyntax yaml formatter npx prettier --write
+extendsyntax Markdown formatter npx prettier --write
+
 set autoindent
 unset backup
 set casesensitive
